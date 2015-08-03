@@ -2,20 +2,17 @@ package com.hupeng.signup.model;
 
 import com.hupeng.signup.model.param.SmsCodeParam;
 import com.hupeng.signup.model.response.UserResponse;
+import com.hupeng.signup.model.subclass.UserClass;
 import com.hupeng.signup.utils.LiteHttpUtil;
 import com.litesuits.android.log.Log;
-import com.litesuits.http.data.NameValuePair;
 import com.litesuits.http.exception.HttpException;
 import com.litesuits.http.request.Request;
 import com.litesuits.http.request.content.JsonBody;
-import com.litesuits.http.request.content.SerializableBody;
-import com.litesuits.http.request.content.UrlEncodedFormBody;
 import com.litesuits.http.request.param.HttpMethod;
 import com.litesuits.http.response.Response;
 import com.litesuits.http.response.handler.HttpModelHandler;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 
 /**
  * Created by End User on 2015/7/30.
@@ -23,6 +20,7 @@ import java.util.LinkedList;
 public class UserModel {
     private static UserModel mInstance = null;
     private static String baseUrl  = "http://10.0.0.17";
+    private  static HashMap<String, UserClass> gAllUserMap = new HashMap<String, UserClass>();
 
     private UserModel() {
     }
